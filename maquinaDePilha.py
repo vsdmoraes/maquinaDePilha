@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/python
 import sys  #Biblioteca do sistema
 
@@ -20,6 +21,11 @@ def sub():
 	count = float(values.pop())
 	count = count - float(values.pop())
 	values.append(count)
+def swap():
+	val1 = float(values.pop())
+	val2 = float(values.pop())
+	values.append(val1)
+	values.append(val2)
 	
 
 # Abre Arquivo
@@ -43,17 +49,19 @@ for i in range(0,len(stack)):
 			print("The stack is empty.")       # Se não ele joga o erro na tela.
 	elif (stack[i].upper() == "MULT"):
 		try:
-			mult()
+			mult()			
 		except:
 			print("The stack is empty.")
 	elif (stack[i].upper() == "DIV"):
 		try:
-			div()
+			swap()
+			div()			
 		except:
 			print("The stack is empty.")
 	elif (stack[i].upper() == "SUB"):
 		try:
-			sub()
+			swap()
+			sub()			
 		except:
 			print("The stack is empty.")
 	elif (stack[i].upper() == "PRINT"):
