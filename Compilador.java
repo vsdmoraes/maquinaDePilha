@@ -10,7 +10,7 @@ class Compilador {
 
         try {
 
-            AnaliseLexica al = new AnaliseLexica("Entrada.txt");
+            AnaliseLexica al = new AnaliseLexica("EntradaJava.txt");
             Parser as = new Parser(al);
 
             arv = as.parseProg();
@@ -19,7 +19,7 @@ class Compilador {
 
             String codigo = backend.geraCodigo(arv);
 
-            PrintStream ps = new PrintStream(new File("Saida.txt"));
+            PrintStream ps = new PrintStream(new File("EntradaPython.txt"));
             ps.print(codigo);
 
             ps.close();
