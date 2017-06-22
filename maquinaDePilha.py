@@ -15,18 +15,12 @@ def mult():
 	values.append(count)
 def div():
 	count = float(values.pop())
-	count = count / float(values.pop())
+	count = float(values.pop()) / count
 	values.append(count)
 def sub():
 	count = float(values.pop())
-	count = count - float(values.pop())
+	count = float(values.pop()) - count
 	values.append(count)
-def swap():
-	val1 = float(values.pop())
-	val2 = float(values.pop())
-	values.append(val1)
-	values.append(val2)
-	
 
 # Abre Arquivo
 
@@ -54,13 +48,11 @@ for i in range(0,len(stack)):
 			print("The stack is empty.")
 	elif (stack[i].upper() == "DIV"):
 		try:
-			swap()
 			div()			
 		except:
 			print("The stack is empty.")
 	elif (stack[i].upper() == "SUB"):
 		try:
-			swap()
 			sub()			
 		except:
 			print("The stack is empty.")
